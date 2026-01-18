@@ -6,7 +6,7 @@ It also includes an interactive desktop drawing pad that allows users to draw di
 The project demonstrates the full machine learning workflow: **data preprocessing → model training → evaluation → deployment in a GUI application**.
 
 ---
-
+Date: 19th January
 ## What’s New / Key Modifications
 1. **Model & Training**
     - Upgraded from MNIST digit-only classification to EMNIST Byclass
