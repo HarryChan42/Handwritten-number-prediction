@@ -7,6 +7,33 @@ The project demonstrates the full machine learning workflow: **data preprocessin
 
 ---
 
+## What’s New / Key Modifications
+1. **Model & Training**
+    - Upgraded from MNIST digit-only classification to EMNIST Byclass
+    - Digits (0–9)
+    - Uppercase letters (A–Z)
+    - Lowercase letters (a–z)
+    - 62 classes in total
+
+2. **EMNIST-specific orientation correction**
+   
+3. **Added training stabilisation**
+    - Early stopping (best weights restored)
+    - Learning rate reduction on plateau
+      
+4. **Expanded evaluation**
+    - Full 62×62 confusion matrix
+    - classification report (precision, recall, F1-score)
+    - Identification of most frequently confused class pairs
+      
+5. **Drawing Pad & Inference**
+    - Support digits(0-9) and letters(A-z)
+    - live prediction loop
+    - probability display
+    - 28×28 preview panel(for debugging)
+
+
+
 ## Project Overview
 
 The software is composed of two main parts:
@@ -136,83 +163,7 @@ Tkinter must be available (included with most Python installations on Windows)
 
 ## FWhat's New / key Modifications
 
-Model & Training
 
-Upgraded from MNIST digit-only classification to EMNIST ByClass, supporting:
-
-Digits (0–9)
-
-Uppercase letters (A–Z)
-
-Lowercase letters (a–z)
-
-62 classes in total
-
-Added EMNIST-specific orientation correction (rotate + flip) during preprocessing
-
-Introduced light data augmentation (translation, rotation, zoom) to improve robustness
-
-Implemented validation split from training data
-
-Added training stabilisation using:
-
-Early stopping (best weights restored)
-
-Learning rate reduction on plateau
-
-Expanded evaluation with:
-
-Full 62×62 confusion matrix
-
-Detailed classification report (precision, recall, F1-score)
-
-Identification of most frequently confused class pairs
-
-Exported reusable inference assets:
-
-Trained .keras model
-
-class_names.txt for class index → character mapping
-
-Drawing Pad & Inference
-
-Extended drawing pad to support digits and letters, not just numbers
-
-Added live prediction loop (automatic inference every ~150 ms)
-
-Implemented Top-K probability display for better interpretability
-
-Added ink centering and scaling to better match EMNIST data distribution
-
-Introduced 28×28 preview panel showing the exact input fed to the model
-
-Added configurable preprocessing toggles:
-
-Optional color inversion
-
-Optional rotation and horizontal flip to match training orientation
-
-Improved UX with:
-
-Adjustable brush size
-
-Confidence score display
-
-Clean separation between drawing, preview, and prediction panels
-
-Engineering & Reproducibility
-
-Clear separation between:
-
-Training / evaluation (train_emnist_byclass.py)
-
-Inference / GUI (draw_pad_predict_emnist.py)
-
-Model and class-label mapping saved explicitly for deployment
-
-Code structured for easy extension (e.g. EMNIST Letters-only, MNIST fallback)
-
-Designed to run out-of-the-box on CPU with minimal dependencies
 
 ## License
 
